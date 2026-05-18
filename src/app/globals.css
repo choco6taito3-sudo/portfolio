@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #020817;
+  --foreground: #e5f2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.22), transparent 34rem),
+    radial-gradient(circle at 85% 12%, rgba(59, 130, 246, 0.16), transparent 28rem),
+    linear-gradient(135deg, #020817 0%, #071427 48%, #0b1f3a 100%);
+  color: var(--foreground);
+  font-family:
+    Inter, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", Meiryo, Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
