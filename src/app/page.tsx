@@ -87,6 +87,15 @@ const works: Work[] = [
     imageAlt: "みずいろクリニックのトップページ",
   },
   {
+    title: "colorful-neil",
+    category: "ネイルサロンサイト（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。作品集、予約・SNS導線、お問い合わせをシンプルなUIで実装。",
+    href: "https://colorful-neil.vercel.app/",
+    image: "/works/colorful-neil.png",
+    imageAlt: "colorful-neilのトップページ",
+  },
+  {
     title: "Corporate Growth Site",
     category: "企業サイト",
     description: "採用と問い合わせを両立する、信頼感重視のコーポレートサイト。",
