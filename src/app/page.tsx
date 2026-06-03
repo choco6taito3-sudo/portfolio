@@ -1,6 +1,16 @@
+import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Reveal } from "@/components/Reveal";
+
+type Work = {
+  title: string;
+  category: string;
+  description: string;
+  href?: string;
+  image?: string;
+  imageAlt?: string;
+};
 
 const services = [
   {
@@ -66,7 +76,16 @@ const cases = [
   },
 ];
 
-const works = [
+const works: Work[] = [
+  {
+    title: "みずいろクリニック",
+    category: "クリニックサイト（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。爽やかなUI、スマホ対応、お知らせ（MDX）、予約導線を実装。",
+    href: "https://mizuiro-clinic.vercel.app/",
+    image: "/works/mizuiro-clinic.png",
+    imageAlt: "みずいろクリニックのトップページ",
+  },
   {
     title: "Corporate Growth Site",
     category: "企業サイト",
@@ -330,32 +349,71 @@ export default function Home() {
           <SectionHeading
             eyebrow="Works"
             title="制作実績"
-            description="実際の業務を想定したデモギャラリーです。業種や目的に合わせて見せ方を調整します。"
+            description="公開済みの制作事例を掲載しています。業種や目的に合わせて見せ方を調整します。"
           />
         </Reveal>
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-          {works.map((work, index) => (
-            <Reveal key={work.title} delay={index * 100}>
-              <article className="overflow-hidden rounded-[2rem] border border-sky-300/15 bg-white/[0.05] shadow-2xl shadow-slate-950/20">
-                <div className="relative h-56 bg-gradient-to-br from-sky-300/25 via-blue-500/20 to-slate-950 p-5">
-                  <div className="absolute inset-6 rounded-3xl border border-white/15 bg-slate-950/30" />
-                  <div className="relative flex h-full flex-col justify-between">
-                    <span className="w-fit rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-sky-100">
+        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {works.map((work, index) => {
+            const card = (
+              <article
+                className={`overflow-hidden rounded-[2rem] border border-sky-300/15 bg-white/[0.05] shadow-2xl shadow-slate-950/20 ${
+                  work.href
+                    ? "transition hover:-translate-y-1 hover:border-sky-300/35"
+                    : ""
+                }`}
+              >
+                {work.image ? (
+                  <div className="relative h-56 overflow-hidden bg-slate-950">
+                    <Image
+                      src={work.image}
+                      alt={work.imageAlt ?? work.title}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
+                    <span className="absolute left-5 top-5 w-fit rounded-full border border-white/20 bg-slate-950/60 px-3 py-1 text-xs font-bold text-sky-100 backdrop-blur-sm">
                       {work.category}
                     </span>
-                    <div>
-                      <div className="mb-3 h-3 w-28 rounded-full bg-sky-200/60" />
-                      <div className="h-3 w-44 rounded-full bg-white/25" />
+                  </div>
+                ) : (
+                  <div className="relative h-56 bg-gradient-to-br from-sky-300/25 via-blue-500/20 to-slate-950 p-5">
+                    <div className="absolute inset-6 rounded-3xl border border-white/15 bg-slate-950/30" />
+                    <div className="relative flex h-full flex-col justify-between">
+                      <span className="w-fit rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-sky-100">
+                        {work.category}
+                      </span>
+                      <div>
+                        <div className="mb-3 h-3 w-28 rounded-full bg-sky-200/60" />
+                        <div className="h-3 w-44 rounded-full bg-white/25" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 <div className="p-6">
                   <h3 className="mb-3 text-xl font-bold text-white">{work.title}</h3>
                   <p className="text-sm leading-8 text-slate-300">{work.description}</p>
+                  {work.href ? (
+                    <p className="mt-4 text-sm font-semibold text-sky-200">
+                      サイトを見る →
+                    </p>
+                  ) : null}
                 </div>
               </article>
-            </Reveal>
-          ))}
+            );
+
+            return (
+              <Reveal key={work.title} delay={index * 100}>
+                {work.href ? (
+                  <a href={work.href} target="_blank" rel="noopener noreferrer">
+                    {card}
+                  </a>
+                ) : (
+                  card
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
