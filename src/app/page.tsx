@@ -96,6 +96,15 @@ const works: Work[] = [
     imageAlt: "colorful-neilのトップページ",
   },
   {
+    title: "輸入雑貨カフェ-taka-",
+    category: "カフェ・雑貨ショップサイト（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。コンセプト紹介、メニュー、雑貨ショップ、アクセス・お問い合わせ導線を実装。",
+    href: "https://imported-goods-cafe.vercel.app/",
+    image: "/works/imported-goods-cafe.png",
+    imageAlt: "輸入雑貨カフェ-taka-のトップページ",
+  },
+  {
     title: "Corporate Growth Site",
     category: "企業サイト",
     description: "採用と問い合わせを両立する、信頼感重視のコーポレートサイト。",
