@@ -128,6 +128,15 @@ const works: Work[] = [
     imageAlt: "みずいろクリニック採用LPのトップページ",
   },
   {
+    title: "焼き鳥絵画展",
+    category: "イベントLP（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。コンセプト、作品紹介、スケジュール、FAQ、予約導線を実装。",
+    href: "https://lp-yakitorikaiga.vercel.app/",
+    image: "/works/lp-yakitorikaiga.png",
+    imageAlt: "焼き鳥絵画展のトップページ",
+  },
+  {
     title: "SNS Funnel Hub",
     category: "SNS連携",
     description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
