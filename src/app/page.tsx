@@ -119,6 +119,15 @@ const works: Work[] = [
     imageAlt: "引き寄せる逹磨のトップページ",
   },
   {
+    title: "みずいろクリニック 採用LP",
+    category: "採用LP（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。募集職種、働く魅力、1日の流れ、募集要項、応募導線を実装。",
+    href: "https://lp-mizuiro-clinickyuuzinn.vercel.app/",
+    image: "/works/lp-mizuiro-clinic.png",
+    imageAlt: "みずいろクリニック採用LPのトップページ",
+  },
+  {
     title: "SNS Funnel Hub",
     category: "SNS連携",
     description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
