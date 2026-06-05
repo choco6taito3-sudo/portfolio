@@ -137,6 +137,15 @@ const works: Work[] = [
     imageAlt: "焼き鳥絵画展のトップページ",
   },
   {
+    title: "Omoide",
+    category: "プライベート型思い出共有アプリ",
+    description:
+      "プライベートな世界の思い出を記録・共有できるWebアプリ。認証、Googleログイン、招待制の空間設計を実装。",
+    href: "https://omoide-demo.vercel.app/",
+    image: "/works/omoide.png",
+    imageAlt: "Omoideのログイン画面",
+  },
+  {
     title: "SNS Funnel Hub",
     category: "SNS連携",
     description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
