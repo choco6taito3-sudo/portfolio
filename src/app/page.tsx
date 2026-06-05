@@ -137,6 +137,14 @@ const works: Work[] = [
     imageAlt: "焼き鳥絵画展のトップページ",
   },
   {
+    title: "SNS Funnel Hub",
+    category: "SNS連携",
+    description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
+  },
+];
+
+const otherWorks: Work[] = [
+  {
     title: "Omoide",
     category: "プライベート型思い出共有アプリ",
     description:
@@ -146,9 +154,13 @@ const works: Work[] = [
     imageAlt: "Omoideのログイン画面",
   },
   {
-    title: "SNS Funnel Hub",
-    category: "SNS連携",
-    description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
+    title: "勤怠管理",
+    category: "プライベート型勤怠管理アプリ",
+    description:
+      "Google認証で利用できる勤怠管理Webアプリ。出退勤記録、勤怠データの確認・管理をシンプルなUIで実装。",
+    href: "https://private-kintaikanri.web.app/",
+    image: "/works/kintaikanri.png",
+    imageAlt: "勤怠管理のログイン画面",
   },
 ];
 
@@ -221,6 +233,72 @@ function SectionHeading({
       <p className="mt-5 text-base leading-9 text-slate-300 md:text-lg">
         {description}
       </p>
+    </div>
+  );
+}
+
+function WorkGrid({ items }: { items: Work[] }) {
+  return (
+    <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {items.map((work, index) => {
+        const card = (
+          <article
+            className={`overflow-hidden rounded-[2rem] border border-sky-300/15 bg-white/[0.05] shadow-2xl shadow-slate-950/20 ${
+              work.href
+                ? "transition hover:-translate-y-1 hover:border-sky-300/35"
+                : ""
+            }`}
+          >
+            {work.image ? (
+              <div className="relative h-56 overflow-hidden bg-slate-950">
+                <Image
+                  src={work.image}
+                  alt={work.imageAlt ?? work.title}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
+                <span className="absolute left-5 top-5 w-fit rounded-full border border-white/20 bg-slate-950/60 px-3 py-1 text-xs font-bold text-sky-100 backdrop-blur-sm">
+                  {work.category}
+                </span>
+              </div>
+            ) : (
+              <div className="relative h-56 bg-gradient-to-br from-sky-300/25 via-blue-500/20 to-slate-950 p-5">
+                <div className="absolute inset-6 rounded-3xl border border-white/15 bg-slate-950/30" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <span className="w-fit rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-sky-100">
+                    {work.category}
+                  </span>
+                  <div>
+                    <div className="mb-3 h-3 w-28 rounded-full bg-sky-200/60" />
+                    <div className="h-3 w-44 rounded-full bg-white/25" />
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="p-6">
+              <h3 className="mb-3 text-xl font-bold text-white">{work.title}</h3>
+              <p className="text-sm leading-8 text-slate-300">{work.description}</p>
+              {work.href ? (
+                <p className="mt-4 text-sm font-semibold text-sky-200">サイトを見る →</p>
+              ) : null}
+            </div>
+          </article>
+        );
+
+        return (
+          <Reveal key={work.title} delay={index * 100}>
+            {work.href ? (
+              <a href={work.href} target="_blank" rel="noopener noreferrer">
+                {card}
+              </a>
+            ) : (
+              card
+            )}
+          </Reveal>
+        );
+      })}
     </div>
   );
 }
@@ -401,69 +479,18 @@ export default function Home() {
             description="公開済みの制作事例を掲載しています。業種や目的に合わせて見せ方を調整します。"
           />
         </Reveal>
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {works.map((work, index) => {
-            const card = (
-              <article
-                className={`overflow-hidden rounded-[2rem] border border-sky-300/15 bg-white/[0.05] shadow-2xl shadow-slate-950/20 ${
-                  work.href
-                    ? "transition hover:-translate-y-1 hover:border-sky-300/35"
-                    : ""
-                }`}
-              >
-                {work.image ? (
-                  <div className="relative h-56 overflow-hidden bg-slate-950">
-                    <Image
-                      src={work.image}
-                      alt={work.imageAlt ?? work.title}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-                    <span className="absolute left-5 top-5 w-fit rounded-full border border-white/20 bg-slate-950/60 px-3 py-1 text-xs font-bold text-sky-100 backdrop-blur-sm">
-                      {work.category}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="relative h-56 bg-gradient-to-br from-sky-300/25 via-blue-500/20 to-slate-950 p-5">
-                    <div className="absolute inset-6 rounded-3xl border border-white/15 bg-slate-950/30" />
-                    <div className="relative flex h-full flex-col justify-between">
-                      <span className="w-fit rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-sky-100">
-                        {work.category}
-                      </span>
-                      <div>
-                        <div className="mb-3 h-3 w-28 rounded-full bg-sky-200/60" />
-                        <div className="h-3 w-44 rounded-full bg-white/25" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="mb-3 text-xl font-bold text-white">{work.title}</h3>
-                  <p className="text-sm leading-8 text-slate-300">{work.description}</p>
-                  {work.href ? (
-                    <p className="mt-4 text-sm font-semibold text-sky-200">
-                      サイトを見る →
-                    </p>
-                  ) : null}
-                </div>
-              </article>
-            );
+        <WorkGrid items={works} />
+      </section>
 
-            return (
-              <Reveal key={work.title} delay={index * 100}>
-                {work.href ? (
-                  <a href={work.href} target="_blank" rel="noopener noreferrer">
-                    {card}
-                  </a>
-                ) : (
-                  card
-                )}
-              </Reveal>
-            );
-          })}
-        </div>
+      <section className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Other Works"
+            title="その他作品"
+            description="クライアント向けサイト以外の、自主制作アプリや実験的なプロジェクトを掲載しています。"
+          />
+        </Reveal>
+        <WorkGrid items={otherWorks} />
       </section>
 
       <section className="px-6 py-32 md:px-10 md:py-36">
