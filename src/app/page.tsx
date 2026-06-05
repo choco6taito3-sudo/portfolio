@@ -110,9 +110,13 @@ const works: Work[] = [
     description: "採用と問い合わせを両立する、信頼感重視のコーポレートサイト。",
   },
   {
-    title: "Local Service LP",
-    category: "サービスLP",
-    description: "地域商圏で選ばれる理由を短時間で伝えるランディングページ。",
+    title: "引き寄せる逹磨",
+    category: "サービスLP（架空デモ）",
+    description:
+      "Next.js + Tailwind で構築。6色のカラーバリエーション、コンセプト・料金・FAQ・お問い合わせ導線を実装。",
+    href: "https://lp-daruma.vercel.app/",
+    image: "/works/lp-daruma.png",
+    imageAlt: "引き寄せる逹磨のトップページ",
   },
   {
     title: "SNS Funnel Hub",
