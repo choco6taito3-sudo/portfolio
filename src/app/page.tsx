@@ -684,17 +684,17 @@ export default function Home() {
                     090-3776-7604
                   </a>
                 </p>
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap gap-4 pt-2">
                   <a
                     href="https://www.instagram.com/_mikeypandemic?igsh=MTczYWc1aGtjNjk5YQ%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="inline-flex size-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-sky-200 hover:bg-sky-300/10"
+                    className="inline-flex size-14 items-center justify-center rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white shadow-lg shadow-pink-950/30 transition hover:scale-105 hover:shadow-xl hover:shadow-pink-950/40"
                   >
                     <svg
                       aria-hidden="true"
-                      className="size-5"
+                      className="size-7"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -706,11 +706,11 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LINE"
-                    className="inline-flex size-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-sky-200 hover:bg-sky-300/10"
+                    className="inline-flex size-14 items-center justify-center rounded-full bg-[#06C755] text-white shadow-lg shadow-emerald-950/30 transition hover:scale-105 hover:shadow-xl hover:shadow-emerald-950/40"
                   >
                     <svg
                       aria-hidden="true"
-                      className="size-5"
+                      className="size-7"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
