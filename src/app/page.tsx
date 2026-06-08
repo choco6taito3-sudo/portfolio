@@ -136,6 +136,16 @@ const works: Work[] = [
     image: "/works/lp-yakitorikaiga.png",
     imageAlt: "焼き鳥絵画展のトップページ",
   },
+];
+
+const snsWorks: Work[] = [
+  {
+    title: "Instagram Web",
+    category: "SNS連携",
+    description:
+      "Next.js + Tailwind で構築。Instagram投稿の表示、プロフィール、外部サイトへの導線連携を実装。",
+    href: "https://instagram-web-git-main-choco6taito3-sudos-projects.vercel.app/",
+  },
   {
     title: "SNS Funnel Hub",
     category: "SNS連携",
@@ -412,6 +422,17 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      <section id="sns-works" className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="SNS Connect"
+            title="SNS連携の実績"
+            description="InstagramやLINEなど、SNSとホームページをつなぐ導線設計・実装の事例です。"
+          />
+        </Reveal>
+        <WorkGrid items={snsWorks} />
       </section>
 
       <section className="px-6 py-32 md:px-10 md:py-36">
