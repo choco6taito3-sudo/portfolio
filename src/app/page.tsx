@@ -316,46 +316,18 @@ export default function Home() {
             <div className="rounded-[2rem] bg-gradient-to-br from-sky-300/20 to-blue-900/20 p-6">
               <div className="grid aspect-square place-items-center rounded-[1.5rem] border border-white/15 bg-slate-950/50 text-center">
                 <div className="grid place-items-center">
-                  <div className="relative grid size-48 place-items-center overflow-hidden rounded-full border-4 border-sky-200/70 bg-gradient-to-br from-sky-100 via-sky-300 to-blue-900 shadow-2xl shadow-sky-950/50">
-                    <div className="absolute inset-3 rounded-full border border-white/35" />
-                    <svg
-                      aria-label="Mikeyのプロフィール写真"
-                      className="relative z-10 size-36 drop-shadow-2xl"
-                      role="img"
-                      viewBox="0 0 160 160"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="80" cy="82" fill="#fff7ed" r="52" />
-                      <path
-                        d="M36 70c4-28 22-46 44-46s40 18 44 46c-13-9-27-14-44-14S49 61 36 70Z"
-                        fill="#fb7185"
-                      />
-                      <circle cx="45" cy="87" fill="#f9a8d4" r="16" />
-                      <circle cx="115" cy="87" fill="#f9a8d4" r="16" />
-                      <circle cx="62" cy="78" fill="#0f172a" r="6" />
-                      <circle cx="98" cy="78" fill="#0f172a" r="6" />
-                      <circle cx="80" cy="92" fill="#ef4444" r="12" />
-                      <path
-                        d="M58 108c12 14 32 14 44 0"
-                        fill="none"
-                        stroke="#0f172a"
-                        strokeLinecap="round"
-                        strokeWidth="6"
-                      />
-                      <path
-                        d="M52 53c10-14 46-14 56 0"
-                        fill="none"
-                        stroke="#facc15"
-                        strokeLinecap="round"
-                        strokeWidth="8"
-                      />
-                      <circle cx="80" cy="30" fill="#facc15" r="10" />
-                    </svg>
+                  <div className="relative size-48 overflow-hidden rounded-full border-4 border-sky-200/70 shadow-2xl shadow-sky-950/50 md:size-56">
+                    <Image
+                      src="/profile/taito.png"
+                      alt="遠藤泰斗のプロフィール写真"
+                      fill
+                      className="object-cover"
+                      sizes="224px"
+                      priority
+                    />
                   </div>
-                  <p className="mt-5 text-lg font-black text-white">Mikey</p>
-                  <p className="mt-1 text-sm font-semibold text-sky-200">
-                    Web Growth Partner
-                  </p>
+                  <p className="mt-5 text-lg font-black text-white">遠藤　泰斗</p>
+                  <p className="mt-1 text-sm font-semibold text-sky-200">たいと</p>
                 </div>
               </div>
             </div>
@@ -365,22 +337,26 @@ export default function Home() {
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
                 Chapter 01 — Profile
               </p>
-              <p className="mb-4 text-2xl font-black text-white md:text-3xl">Mikey</p>
+              <p className="mb-4 text-2xl font-black text-white md:text-3xl">
+                遠藤　泰斗（たいと）
+              </p>
               <h2 className="text-3xl font-bold text-white md:text-5xl">
-                経営者の言葉を、成果につながるWeb導線へ。
+                思いに寄り添い、一緒に進めていく
               </h2>
               <p className="mt-6 leading-9 text-slate-300">
-                Web制作、UI設計、SNS導線設計、ツール開発を横断して支援しています。
-                きれいなサイトで終わらせず、会社の強みが伝わり、相談につながる仕組みを一緒に作ることを大切にしています。
+                本業は看護師として働きながら、ものづくりの場も大切にしています。
+                アイデアを形にするのが好きで、ひらめきを活かすことには自信があります。
+                コラージュアートやキャラクター制作も行っており、ストーリーを考えることが得意です。
+                Web制作を通じて、想いを丁寧に汲み取り、気持ちを共有できる形にしていくことを大切にしています。
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
-                  "Next.js",
-                  "Tailwind CSS",
-                  "UI設計",
-                  "SNS連携",
-                  "ツール作成",
-                  "チャットボット",
+                  "看護師",
+                  "ものづくり",
+                  "コラージュアート",
+                  "キャラクター制作",
+                  "ストーリー設計",
+                  "Web制作",
                 ].map((skill) => (
                   <span
                     key={skill}
