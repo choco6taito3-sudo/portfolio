@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
-import { FaqAccordion } from "@/components/FaqAccordion";
 import { Reveal } from "@/components/Reveal";
 
 type Work = {
@@ -49,30 +48,14 @@ const services = [
       "border-yellow-200/80 bg-gradient-to-br from-yellow-300 via-amber-200 to-orange-100 shadow-yellow-950/30 hover:shadow-yellow-500/35",
     tagClass: "bg-slate-950 text-yellow-100",
   },
-];
-
-const stats = [
-  { value: "48社", label: "中小企業の導入支援" },
-  { value: "32%", label: "問い合わせ獲得率アップ" },
-  { value: "28%", label: "運用コスト削減" },
-  { value: "21日", label: "平均初期公開期間" },
-];
-
-const cases = [
   {
-    industry: "地域工務店",
-    issue: "施工実績が伝わらず、紹介以外の問い合わせが少なかった。",
-    result: "事例ページとLINE導線を整備し、月間相談数が2.1倍に増加。",
-  },
-  {
-    industry: "士業事務所",
-    issue: "専門性は高いが、初回相談への心理的ハードルが高かった。",
-    result: "FAQと無料相談CTAを再設計し、フォーム離脱率を24%改善。",
-  },
-  {
-    industry: "美容サロン",
-    issue: "SNS投稿と予約ページが分断され、来店予約につながりにくかった。",
-    result: "Instagram導線と予約導線を統合し、新規予約が月18件増加。",
+    title: "ツール作成",
+    description:
+      "業務効率化や運用に必要なWebアプリ・ダッシュボードを、目的に合わせて設計から開発します。",
+    tag: "Tool",
+    cardClass:
+      "border-teal-200/80 bg-gradient-to-br from-teal-300 via-cyan-200 to-sky-100 shadow-teal-950/30 hover:shadow-teal-500/35",
+    tagClass: "bg-slate-950 text-teal-100",
   },
 ];
 
@@ -171,52 +154,26 @@ const otherWorks: Work[] = [
   },
 ];
 
-const voices = [
-  {
-    name: "製造業 代表取締役",
-    comment:
-      "専門用語を使わず、経営目線で必要な導線を提案してくれました。公開後の問い合わせも明らかに増えています。",
-  },
-  {
-    name: "飲食店 オーナー",
-    comment:
-      "SNSとホームページがつながったことで、投稿を見たお客さまが予約まで進みやすくなりました。",
-  },
-  {
-    name: "士業事務所 所長",
-    comment:
-      "古いサイトを刷新しただけでなく、相談前の不安を減らすコンテンツまで整えてもらえました。",
-  },
-];
-
 const steps = [
-  "無料相談",
-  "課題整理",
-  "設計・制作",
-  "公開",
-  "改善運用",
-];
-
-const faqs = [
   {
-    question: "制作期間はどのくらいですか？",
-    answer:
-      "小規模なコーポレートサイトやLPであれば、素材がそろってから約3週間が目安です。ページ数や機能に応じて事前にスケジュールを提示します。",
+    title: "相談（ヒアリング）",
+    description: "現状や目標、お困りごとを丁寧にお聞きします。",
   },
   {
-    question: "既存サイトの一部改修だけでも相談できますか？",
-    answer:
-      "可能です。トップページの改善、スマホ対応、問い合わせ導線の見直し、表示速度改善など、必要な範囲に絞って対応できます。",
+    title: "課題整理",
+    description: "優先順位と進め方を一緒に整理します。",
   },
   {
-    question: "SNS連携では何ができますか？",
-    answer:
-      "Instagram投稿の見せ方、LINE公式アカウントへの導線、SNSキャンペーン用LPなど、サイトとSNSの役割を整理して接続します。",
+    title: "設計",
+    description: "情報設計とUIを、目的に沿って設計します。",
   },
   {
-    question: "公開後の運用も依頼できますか？",
-    answer:
-      "はい。文章の更新、アクセス解析、問い合わせ改善、チャットボットの内容調整など、継続的な改善も支援します。",
+    title: "制作",
+    description: "デザインと実装を進め、完成形を形にします。",
+  },
+  {
+    title: "公開",
+    description: "公開と初期確認まで伴走します。",
   },
 ];
 
@@ -322,274 +279,43 @@ export default function Home() {
             href="#contact"
             className="hidden rounded-full border border-sky-300/30 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-200 hover:bg-sky-300/10 md:inline-flex"
           >
-            無料相談へ
+            お問い合わせ
           </a>
         </div>
 
-        <div className="mx-auto grid max-w-7xl gap-12 pt-28 md:grid-cols-[1.08fr_0.92fr] md:items-center md:pt-32">
+        <div className="mx-auto max-w-4xl pt-28 text-center md:pt-36">
           <Reveal>
-            <p className="mb-5 inline-flex rounded-full border border-sky-300/25 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-200">
-              中小企業のWeb集客を、制作から連携まで伴走
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
+              Welcome
             </p>
-            <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-              ビジネスを次のステージへ
+            <h1 className="text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+              お越し頂き、
+              <br />
+              ありがとうございます
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-10 text-slate-300">
-              ホームページ作成、改修、SNS連携、チャットボット構築を一気通貫で支援。
-              「見られるだけ」で終わらない、問い合わせにつながるサイトを作ります。
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-10 text-slate-300">
+              このページでは、私がどのようにWeb制作やツール開発を進めているかを、
+              上から順にお見せします。ゆっくりご覧ください。
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
-                href="#contact"
-                className="rounded-full bg-gradient-to-r from-sky-400 to-blue-500 px-8 py-4 text-center text-sm font-bold text-slate-950 shadow-xl shadow-sky-500/25 transition hover:-translate-y-1"
+                href="#profile"
+                className="rounded-full bg-gradient-to-r from-sky-400 to-blue-500 px-8 py-4 text-sm font-bold text-slate-950 shadow-xl shadow-sky-500/25 transition hover:-translate-y-1"
               >
-                無料で相談する
+                プロフィールから見る
               </a>
               <a
-                href="#services"
-                className="rounded-full border border-white/15 px-8 py-4 text-center text-sm font-bold text-white transition hover:border-sky-200/60 hover:bg-white/10"
+                href="#works"
+                className="rounded-full border border-white/15 px-8 py-4 text-sm font-bold text-white transition hover:border-sky-200/60 hover:bg-white/10"
               >
-                サービスを見る
+                制作実績を見る
               </a>
             </div>
           </Reveal>
-
-          <Reveal delay={140}>
-            <div className="relative rounded-[2.5rem] border border-sky-300/20 bg-white/[0.06] p-5 shadow-2xl shadow-sky-950/40 backdrop-blur">
-              <div className="absolute -right-10 -top-10 size-36 rounded-full bg-sky-400/20 blur-3xl" />
-              <div className="rounded-[2rem] bg-slate-950/80 p-6">
-                <div className="mb-8 flex items-center gap-2">
-                  <span className="size-3 rounded-full bg-red-400" />
-                  <span className="size-3 rounded-full bg-yellow-300" />
-                  <span className="size-3 rounded-full bg-emerald-400" />
-                </div>
-                <div className="space-y-5">
-                  {["問い合わせ導線", "SNS連携", "FAQ自動化"].map((item, index) => (
-                    <div
-                      key={item}
-                      className="rounded-3xl border border-sky-300/15 bg-sky-300/[0.06] p-5"
-                    >
-                      <div className="mb-3 flex items-center justify-between">
-                        <p className="font-semibold text-white">{item}</p>
-                        <span className="text-sm text-sky-200">
-                          {index === 0 ? "+32%" : index === 1 ? "連携済" : "24h"}
-                        </span>
-                      </div>
-                      <div className="h-2 rounded-full bg-slate-800">
-                        <div
-                          className="h-2 rounded-full bg-gradient-to-r from-sky-300 to-blue-500"
-                          style={{ width: `${86 - index * 13}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      <section id="services" className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Services"
-            title="必要なWeb施策をまとめて相談できます"
-            description="新規制作から既存サイトの改善、SNSと問い合わせ導線の接続まで、経営課題に合わせて組み合わせます。"
-          />
-        </Reveal>
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <Reveal key={service.title} delay={index * 90}>
-              <article
-                className={`h-full rounded-[2rem] border p-6 shadow-2xl transition hover:-translate-y-1 ${service.cardClass}`}
-              >
-                <span
-                  className={`mb-8 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] ${service.tagClass}`}
-                >
-                  {service.tag}
-                </span>
-                <h3 className="mb-4 text-xl font-bold text-slate-950">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-8 text-slate-600">
-                  {service.description}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section id="sns-works" className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="SNS Connect"
-            title="SNS連携の実績"
-            description="InstagramやLINEなど、SNSとホームページをつなぐ導線設計・実装の事例です。"
-          />
-        </Reveal>
-        <WorkGrid items={snsWorks} />
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-sky-300/15 bg-slate-950/55 p-6 shadow-2xl shadow-sky-950/20 md:p-10">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Results"
-              title="数字で見る実績"
-              description="問い合わせ獲得、運用効率、公開スピードを重視して、経営判断しやすいWeb施策に落とし込みます。"
-            />
-          </Reveal>
-          <div className="grid gap-4 md:grid-cols-4">
-            {stats.map((stat, index) => (
-              <Reveal key={stat.label} delay={index * 80}>
-                <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 text-center">
-                  <p className="text-4xl font-black text-sky-200 md:text-5xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-3 text-sm text-slate-300">{stat.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Cases"
-            title="導入事例"
-            description="業種ごとの課題に合わせて、必要な情報設計と導線改善を行います。"
-          />
-        </Reveal>
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-          {cases.map((item, index) => (
-            <Reveal key={item.industry} delay={index * 100}>
-              <article className="h-full rounded-[2rem] border border-sky-300/15 bg-white/[0.05] p-7">
-                <p className="mb-5 text-sm font-bold text-sky-200">{item.industry}</p>
-                <div className="space-y-5">
-                  <div>
-                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500">
-                      課題
-                    </p>
-                    <p className="leading-8 text-slate-300">{item.issue}</p>
-                  </div>
-                  <div>
-                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500">
-                      成果
-                    </p>
-                    <p className="leading-8 text-white">{item.result}</p>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Works"
-            title="制作実績"
-            description="公開済みの制作事例を掲載しています。業種や目的に合わせて見せ方を調整します。"
-          />
-        </Reveal>
-        <WorkGrid items={works} />
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Other Works"
-            title="その他作品"
-            description="クライアント向けサイト以外の、自主制作アプリや実験的なプロジェクトを掲載しています。"
-          />
-        </Reveal>
-        <WorkGrid items={otherWorks} />
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Voices"
-            title="お客さまの声"
-            description="制作だけでなく、経営課題の整理から公開後の改善まで相談できる点を評価いただいています。"
-          />
-        </Reveal>
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-          {voices.map((voice, index) => (
-            <Reveal key={voice.name} delay={index * 100}>
-              <figure className="h-full rounded-[2rem] border border-sky-300/15 bg-slate-950/50 p-7">
-                <blockquote className="text-lg leading-10 text-white">
-                  &quot;{voice.comment}&quot;
-                </blockquote>
-                <figcaption className="mt-6 text-sm font-semibold text-sky-200">
-                  {voice.name}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Process"
-            title="導入の流れ"
-            description="初回相談から公開後の改善まで、必要なステップを明確にして進行します。"
-          />
-        </Reveal>
-        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-5">
-          {steps.map((step, index) => (
-            <Reveal key={step} delay={index * 80}>
-              <div className="relative rounded-3xl border border-sky-300/15 bg-white/[0.05] p-5 text-center">
-                <div className="mx-auto mb-4 grid size-12 place-items-center rounded-full bg-sky-300 text-lg font-black text-slate-950">
-                  {index + 1}
-                </div>
-                <p className="font-bold text-white">{step}</p>
-                <p className="mt-3 text-xs leading-7 text-slate-400">
-                  {index === 0
-                    ? "課題や目標を整理"
-                    : index === 1
-                      ? "導線と優先順位を設計"
-                      : index === 2
-                        ? "デザインと実装"
-                        : index === 3
-                          ? "公開と初期確認"
-                          : "分析と改善提案"}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <Reveal>
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
-                FAQ
-              </p>
-              <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
-                よくある質問
-              </h2>
-              <p className="mt-5 text-base leading-9 text-slate-300">
-                検討段階でよくいただく質問をまとめました。具体的な費用や範囲は無料相談で確認できます。
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <FaqAccordion items={faqs} />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="px-6 py-32 md:px-10 md:py-36">
+      <section id="profile" className="px-6 py-32 md:px-10 md:py-36">
         <div className="mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] border border-sky-300/15 bg-white/[0.05] p-6 md:p-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div className="rounded-[2rem] bg-gradient-to-br from-sky-300/20 to-blue-900/20 p-6">
@@ -631,11 +357,9 @@ export default function Home() {
                       <circle cx="80" cy="30" fill="#facc15" r="10" />
                     </svg>
                   </div>
-                  <p className="mt-5 text-lg font-black text-white">
-                    Mikey
-                  </p>
+                  <p className="mt-5 text-lg font-black text-white">Mikey</p>
                   <p className="mt-1 text-sm font-semibold text-sky-200">
-                    Profile Photo
+                    Web Growth Partner
                   </p>
                 </div>
               </div>
@@ -644,36 +368,147 @@ export default function Home() {
           <Reveal delay={120}>
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
-                Profile
+                Chapter 01 — Profile
               </p>
-              <p className="mb-4 text-2xl font-black text-white md:text-3xl">
-                Mikey
-              </p>
+              <p className="mb-4 text-2xl font-black text-white md:text-3xl">Mikey</p>
               <h2 className="text-3xl font-bold text-white md:text-5xl">
                 経営者の言葉を、成果につながるWeb導線へ。
               </h2>
               <p className="mt-6 leading-9 text-slate-300">
-                Web制作、UI設計、SNS導線設計、業務自動化を横断して支援しています。
+                Web制作、UI設計、SNS導線設計、ツール開発を横断して支援しています。
                 きれいなサイトで終わらせず、会社の強みが伝わり、相談につながる仕組みを一緒に作ることを大切にしています。
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                {["Next.js", "Tailwind CSS", "UI設計", "SNS連携", "チャットボット", "改善運用"].map(
-                  (skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100"
-                    >
-                      {skill}
-                    </span>
-                  ),
-                )}
+                {[
+                  "Next.js",
+                  "Tailwind CSS",
+                  "UI設計",
+                  "SNS連携",
+                  "ツール作成",
+                  "チャットボット",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-sky-300/20 bg-sky-300/10 px-4 py-2 text-sm font-semibold text-sky-100"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section id="contact" className="px-6 py-32 md:px-10 md:py-36">
+      <section id="process" className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Chapter 02 — Style"
+            title="進め方"
+            description="お仕事は、相談から公開までこの流れで進めます。一つひとつ丁寧に、目的に沿って形にしていきます。"
+          />
+        </Reveal>
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-5">
+          {steps.map((step, index) => (
+            <Reveal key={step.title} delay={index * 80}>
+              <div className="relative h-full rounded-3xl border border-sky-300/15 bg-white/[0.05] p-5 text-center">
+                <div className="mx-auto mb-4 grid size-12 place-items-center rounded-full bg-sky-300 text-lg font-black text-slate-950">
+                  {index + 1}
+                </div>
+                <p className="font-bold text-white">{step.title}</p>
+                <p className="mt-3 text-xs leading-7 text-slate-400">
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Chapter 03 — Services"
+            title="対応できること"
+            description="ホームページの新規制作・改修から、SNS連携、チャットボット、業務ツールまで。必要な範囲を組み合わせてご相談いただけます。"
+          />
+        </Reveal>
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={index * 90}>
+              <article
+                className={`h-full rounded-[2rem] border p-6 shadow-2xl transition hover:-translate-y-1 ${service.cardClass}`}
+              >
+                <span
+                  className={`mb-8 inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] ${service.tagClass}`}
+                >
+                  {service.tag}
+                </span>
+                <h3 className="mb-4 text-xl font-bold text-slate-950">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-8 text-slate-600">
+                  {service.description}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="sns-works" className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Chapter 04 — SNS Works"
+            title="SNS連携の実績"
+            description="SNSとホームページをつなぐ導線設計・実装の事例です。"
+          />
+        </Reveal>
+        <WorkGrid items={snsWorks} />
+      </section>
+
+      <section id="works" className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Chapter 05 — Works"
+            title="制作実績"
+            description="公開済みの制作事例を掲載しています。業種や目的に合わせて見せ方を調整します。"
+          />
+        </Reveal>
+        <WorkGrid items={works} />
+      </section>
+
+      <section className="px-6 py-32 md:px-10 md:py-36">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Chapter 06 — Other Works"
+            title="その他作品"
+            description="クライアント向けサイト以外の、自主制作アプリや実験的なプロジェクトです。"
+          />
+        </Reveal>
+        <WorkGrid items={otherWorks} />
+      </section>
+
+      <section className="px-6 py-24 md:px-10 md:py-32">
+        <Reveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
+              Closing
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
+              御覧いただき、
+              <br />
+              ありがとうございました
+            </h2>
+            <p className="mt-6 text-base leading-9 text-slate-300 md:text-lg">
+              ここまでお読みいただき、ありがとうございます。
+              ご興味をお持ちいただけましたら、お気軽にお問い合わせください。
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section id="contact" className="px-6 pb-32 pt-8 md:px-10 md:pb-40">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal>
             <div>
@@ -681,10 +516,10 @@ export default function Home() {
                 Contact
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
-                まずは現在の課題をお聞かせください
+                お問い合わせ
               </h2>
               <p className="mt-5 text-base leading-9 text-slate-300">
-                新規制作、改修、SNS連携、チャットボットなど、必要な範囲が決まっていなくても相談できます。
+                新規制作、改修、SNS連携、ツール作成など、必要な範囲が決まっていなくても相談できます。
               </p>
               <div className="mt-8 space-y-4 text-sm text-slate-300">
                 <p>

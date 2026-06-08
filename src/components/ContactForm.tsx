@@ -35,6 +35,7 @@ export function ContactForm() {
           <option>ホームページ改修</option>
           <option>SNS連携</option>
           <option>チャットボット構築</option>
+          <option>ツール作成</option>
         </select>
       </label>
       <label className="block space-y-2 text-sm font-medium text-slate-200">
