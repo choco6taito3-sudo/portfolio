@@ -4,6 +4,10 @@
   color-scheme: dark;
   --background: #18181b;
   --foreground: #d6d3d1;
+  --accent: #8fa89a;
+  --accent-soft: rgba(143, 168, 154, 0.14);
+  --accent-warm: #c4a99e;
+  --accent-warm-soft: rgba(196, 169, 158, 0.12);
 }
 
 * {
@@ -18,8 +22,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(120, 113, 108, 0.07), transparent 34rem),
-    radial-gradient(circle at 85% 12%, rgba(87, 83, 78, 0.05), transparent 28rem),
+    radial-gradient(circle at top left, var(--accent-soft), transparent 34rem),
+    radial-gradient(circle at 85% 12%, var(--accent-warm-soft), transparent 28rem),
     linear-gradient(160deg, #18181b 0%, #1c1917 50%, #171615 100%);
   color: var(--foreground);
   font-family:
@@ -33,7 +37,7 @@ a {
 }
 
 ::selection {
-  background: rgba(168, 162, 158, 0.28);
+  background: rgba(143, 168, 154, 0.32);
 }
 
 .reveal {

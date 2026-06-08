@@ -1,6 +1,6 @@
 export function ContactForm() {
   return (
-    <form className="space-y-5 rounded-[2rem] border border-stone-500/15 bg-stone-900/40 p-6 shadow-lg shadow-black/10 backdrop-blur md:p-8">
+    <form className="space-y-5 rounded-[2rem] border border-stone-500/15 border-t-2 border-t-teal-700/30 bg-stone-900/40 p-6 shadow-lg shadow-black/10 backdrop-blur md:p-8">
       <div className="grid gap-5 md:grid-cols-2">
         <label className="space-y-2 text-sm font-medium text-stone-300">
           お名前
@@ -8,7 +8,7 @@ export function ContactForm() {
             type="text"
             name="name"
             placeholder="山田 太郎"
-            className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400/40"
+            className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-teal-600/40"
           />
         </label>
         <label className="space-y-2 text-sm font-medium text-stone-300">
@@ -17,7 +17,7 @@ export function ContactForm() {
             type="email"
             name="email"
             placeholder="sample@example.com"
-            className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400/40"
+            className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-teal-600/40"
           />
         </label>
       </div>
@@ -25,7 +25,7 @@ export function ContactForm() {
         ご相談内容
         <select
           name="service"
-          className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/60 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400/40"
+          className="w-full rounded-2xl border border-stone-500/15 bg-stone-950/60 px-4 py-3 text-stone-100 outline-none transition focus:border-teal-600/40"
           defaultValue=""
         >
           <option value="" disabled>
@@ -44,12 +44,12 @@ export function ContactForm() {
           name="message"
           rows={5}
           placeholder="現在の課題や実現したいことをお聞かせください。"
-          className="w-full resize-none rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400/40"
+          className="w-full resize-none rounded-2xl border border-stone-500/15 bg-stone-950/40 px-4 py-3 text-stone-100 outline-none transition focus:border-teal-600/40"
         />
       </label>
       <button
         type="button"
-        className="w-full rounded-2xl bg-stone-600 px-6 py-4 text-sm font-bold text-stone-100 shadow-md shadow-black/20 transition hover:bg-stone-500"
+        className="w-full rounded-2xl border border-teal-700/30 bg-teal-900/40 px-6 py-4 text-sm font-bold text-teal-50 shadow-md shadow-black/20 transition hover:border-teal-500/40 hover:bg-teal-800/50"
       >
         相談内容を送信する
       </button>

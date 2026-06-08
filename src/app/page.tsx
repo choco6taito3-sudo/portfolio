@@ -17,30 +17,35 @@ const services = [
     description:
       "会社の強み、サービス、問い合わせ導線を整理し、信頼されるWebサイトを設計から公開まで支援します。",
     tag: "Build",
+    accentClass: "border-t-teal-600/30",
   },
   {
     title: "ホームページ改修",
     description:
       "古くなったデザインや分かりにくい導線を見直し、集客と採用に使えるサイトへ改善します。",
     tag: "Improve",
+    accentClass: "border-t-amber-700/30",
   },
   {
     title: "SNS連携",
     description:
       "Instagram、LINE、Xなどの運用導線をサイトに組み込み、継続的な接点づくりを進めます。",
     tag: "Connect",
+    accentClass: "border-t-rose-500/25",
   },
   {
     title: "チャットボット構築",
     description:
       "よくある質問や初回相談を自動化し、営業時間外の問い合わせ機会を逃さない仕組みを整えます。",
     tag: "Automate",
+    accentClass: "border-t-stone-400/25",
   },
   {
     title: "ツール作成",
     description:
       "業務効率化や運用に必要なWebアプリ・ダッシュボードを、目的に合わせて設計から開発します。",
     tag: "Tool",
+    accentClass: "border-t-cyan-700/30",
   },
 ];
 
@@ -168,7 +173,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto mb-12 max-w-3xl text-center">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-stone-400">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-teal-400/75">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-bold tracking-tight text-stone-100 md:text-5xl">
@@ -189,7 +194,7 @@ function WorkGrid({ items }: { items: Work[] }) {
           <article
             className={`overflow-hidden rounded-[2rem] border border-stone-500/15 bg-stone-900/30 shadow-lg shadow-black/10 ${
               work.href
-                ? "transition hover:-translate-y-0.5 hover:border-stone-400/25 hover:bg-stone-900/40"
+                ? "transition hover:-translate-y-0.5 hover:border-teal-600/20 hover:bg-stone-900/40"
                 : ""
             }`}
           >
@@ -225,7 +230,7 @@ function WorkGrid({ items }: { items: Work[] }) {
               <h3 className="mb-3 text-xl font-bold text-stone-100">{work.title}</h3>
               <p className="text-sm leading-8 text-stone-400">{work.description}</p>
               {work.href ? (
-                <p className="mt-4 text-sm font-semibold text-stone-300">サイトを見る →</p>
+                <p className="mt-4 text-sm font-semibold text-teal-400/80">サイトを見る →</p>
               ) : null}
             </div>
           </article>
@@ -257,7 +262,7 @@ export default function Home() {
           </a>
           <a
             href="#contact"
-            className="hidden rounded-full border border-stone-500/25 px-5 py-2 text-sm font-semibold text-stone-300 transition hover:border-stone-400/40 hover:bg-stone-800/40 md:inline-flex"
+            className="hidden rounded-full border border-teal-700/25 px-5 py-2 text-sm font-semibold text-teal-200/90 transition hover:border-teal-500/35 hover:bg-teal-950/30 md:inline-flex"
           >
             お問い合わせ
           </a>
@@ -265,10 +270,10 @@ export default function Home() {
 
         <div className="mx-auto max-w-4xl pt-28 text-center md:pt-36">
           <Reveal>
-            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-stone-400">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-teal-400/75">
               Welcome
             </p>
-            <h1 className="bg-gradient-to-br from-stone-200 via-stone-300 to-stone-400 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent md:text-6xl lg:text-7xl">
+            <h1 className="bg-gradient-to-br from-stone-200 via-teal-100/85 to-stone-300 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent md:text-6xl lg:text-7xl">
               お越し頂き、
               <br />
               ありがとうございます
@@ -280,7 +285,7 @@ export default function Home() {
             <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href="#profile"
-                className="rounded-full bg-stone-600 px-8 py-4 text-sm font-bold text-stone-100 shadow-md shadow-black/20 transition hover:bg-stone-500"
+                className="rounded-full border border-teal-700/30 bg-teal-900/40 px-8 py-4 text-sm font-bold text-teal-50 shadow-md shadow-black/20 transition hover:border-teal-500/40 hover:bg-teal-800/50"
               >
                 プロフィールから見る
               </a>
@@ -296,12 +301,12 @@ export default function Home() {
       </section>
 
       <section id="profile" className="px-6 py-32 md:px-10 md:py-36">
-        <div className="mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] border border-stone-500/15 bg-stone-900/25 p-6 md:p-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] border border-stone-500/15 border-l-4 border-l-teal-700/30 bg-stone-900/25 p-6 md:p-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div className="rounded-[2rem] bg-stone-900/40 p-6">
               <div className="grid aspect-square place-items-center rounded-[1.5rem] border border-stone-500/15 bg-stone-950/40 text-center">
                 <div className="grid place-items-center">
-                  <div className="relative size-48 overflow-hidden rounded-full border-4 border-stone-500/30 shadow-lg shadow-black/20 md:size-56">
+                  <div className="relative size-48 overflow-hidden rounded-full border-4 border-teal-700/25 shadow-lg shadow-black/20 md:size-56">
                     <Image
                       src="/profile/taito.png"
                       alt="遠藤泰斗のプロフィール写真"
@@ -312,14 +317,14 @@ export default function Home() {
                     />
                   </div>
                   <p className="mt-5 text-lg font-black text-stone-100">遠藤　泰斗</p>
-                  <p className="mt-1 text-sm font-semibold text-stone-400">たいと</p>
+                  <p className="mt-1 text-sm font-semibold text-teal-400/75">たいと</p>
                 </div>
               </div>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-stone-400">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-teal-400/75">
                 Chapter 01 — Profile
               </p>
               <p className="mb-4 text-2xl font-black text-stone-100 md:text-3xl">
@@ -345,7 +350,7 @@ export default function Home() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-stone-500/20 bg-stone-800/40 px-4 py-2 text-sm font-semibold text-stone-300"
+                    className="rounded-full border border-teal-700/20 bg-teal-950/20 px-4 py-2 text-sm font-semibold text-stone-300"
                   >
                     {skill}
                   </span>
@@ -368,7 +373,7 @@ export default function Home() {
           {steps.map((step, index) => (
             <Reveal key={step.title} delay={index * 80}>
               <div className="relative h-full rounded-3xl border border-stone-500/15 bg-stone-900/30 p-5 text-center">
-                <div className="mx-auto mb-4 grid size-12 place-items-center rounded-full bg-stone-600 text-lg font-black text-stone-100">
+                <div className="mx-auto mb-4 grid size-12 place-items-center rounded-full border border-teal-600/25 bg-teal-900/40 text-lg font-black text-teal-100">
                   {index + 1}
                 </div>
                 <p className="font-bold text-stone-100">{step.title}</p>
@@ -392,8 +397,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 90}>
-              <article className="h-full rounded-[2rem] border border-stone-500/15 bg-stone-900/30 p-6 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:border-stone-400/25 hover:bg-stone-900/40">
-                <span className="mb-8 inline-flex rounded-full border border-stone-600/30 bg-stone-800/50 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-stone-400">
+              <article className={`h-full rounded-[2rem] border border-stone-500/15 border-t-2 bg-stone-900/30 p-6 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:border-teal-600/20 hover:bg-stone-900/40 ${service.accentClass}`}>
+                <span className="mb-8 inline-flex rounded-full border border-teal-700/20 bg-teal-950/25 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-teal-300/80">
                   {service.tag}
                 </span>
                 <h3 className="mb-4 text-xl font-bold text-stone-100">
@@ -444,10 +449,10 @@ export default function Home() {
       <section className="px-6 py-24 md:px-10 md:py-32">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-stone-400">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-teal-400/75">
               Closing
             </p>
-            <h2 className="bg-gradient-to-br from-stone-200 via-stone-300 to-stone-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">
+            <h2 className="bg-gradient-to-br from-stone-200 via-rose-100/75 to-teal-100/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">
               御覧いただき、
               <br />
               ありがとうございました
@@ -464,7 +469,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal>
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-stone-400">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-teal-400/75">
                 Contact
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-stone-100 md:text-5xl">
@@ -478,14 +483,14 @@ export default function Home() {
                   <span className="font-semibold text-stone-200">Email:</span>{" "}
                   <a
                     href="mailto:choco6taito3@gmail.com"
-                    className="transition hover:text-stone-200"
+                    className="transition hover:text-teal-300/90"
                   >
                     choco6taito3@gmail.com
                   </a>
                 </p>
                 <p>
                   <span className="font-semibold text-stone-200">Tel:</span>{" "}
-                  <a href="tel:09037767604" className="transition hover:text-stone-200">
+                  <a href="tel:09037767604" className="transition hover:text-teal-300/90">
                     090-3776-7604
                   </a>
                 </p>
@@ -495,7 +500,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="inline-flex size-14 items-center justify-center rounded-full bg-stone-700 text-stone-100 shadow-md shadow-black/20 transition hover:bg-stone-600"
+                    className="inline-flex size-14 items-center justify-center rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white shadow-lg shadow-pink-950/30 transition hover:scale-105 hover:shadow-xl hover:shadow-pink-950/40"
                   >
                     <svg
                       aria-hidden="true"
@@ -511,7 +516,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LINE"
-                    className="inline-flex size-14 items-center justify-center rounded-full bg-stone-700 text-stone-100 shadow-md shadow-black/20 transition hover:bg-stone-600"
+                    className="inline-flex size-14 items-center justify-center rounded-full bg-[#06C755] text-white shadow-lg shadow-emerald-950/30 transition hover:scale-105 hover:shadow-xl hover:shadow-emerald-950/40"
                   >
                     <svg
                       aria-hidden="true"
