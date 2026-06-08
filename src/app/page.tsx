@@ -140,16 +140,13 @@ const works: Work[] = [
 
 const snsWorks: Work[] = [
   {
-    title: "Instagram Web",
+    title: "IG Ops",
     category: "SNS連携",
     description:
-      "Next.js + Tailwind で構築。Instagram投稿の表示、プロフィール、外部サイトへの導線連携を実装。",
-    href: "https://instagram-web-git-main-choco6taito3-sudos-projects.vercel.app/",
-  },
-  {
-    title: "SNS Funnel Hub",
-    category: "SNS連携",
-    description: "SNSから問い合わせまでの流れを1画面で分かりやすく可視化。",
+      "Next.js + Tailwind で構築。Instagram運用ダッシュボード、フォロワー分析、競合分析、予約投稿、ハッシュタグ管理、AIレポートを実装。",
+    href: "https://instagram-web-three.vercel.app/",
+    image: "/works/instagram-web-three.png",
+    imageAlt: "IG Ops Instagram運用ツールのダッシュボード",
   },
 ];
 
