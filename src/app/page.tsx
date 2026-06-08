@@ -88,11 +88,6 @@ const works: Work[] = [
     imageAlt: "輸入雑貨カフェ-taka-のトップページ",
   },
   {
-    title: "Corporate Growth Site",
-    category: "企業サイト",
-    description: "採用と問い合わせを両立する、信頼感重視のコーポレートサイト。",
-  },
-  {
     title: "引き寄せる逹磨",
     category: "サービスLP（架空デモ）",
     description:
@@ -288,7 +283,7 @@ export default function Home() {
             <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
               Welcome
             </p>
-            <h1 className="text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="bg-gradient-to-br from-rose-100 via-orange-50 to-sky-100 bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent md:text-6xl lg:text-7xl">
               お越し頂き、
               <br />
               ありがとうございます
@@ -495,7 +490,7 @@ export default function Home() {
             <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">
               Closing
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="bg-gradient-to-br from-rose-100 via-orange-50 to-sky-100 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-5xl">
               御覧いただき、
               <br />
               ありがとうございました
