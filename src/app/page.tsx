@@ -18,6 +18,7 @@ const services = [
       "会社の強み、サービス、問い合わせ導線を整理し、信頼されるWebサイトを設計から公開まで支援します。",
     tag: "Build",
     accentClass: "border-t-teal-600/30",
+    cardClass: "bg-gradient-to-br from-teal-950/50 via-stone-900/35 to-stone-950/45",
   },
   {
     title: "ホームページ改修",
@@ -25,6 +26,7 @@ const services = [
       "古くなったデザインや分かりにくい導線を見直し、集客と採用に使えるサイトへ改善します。",
     tag: "Improve",
     accentClass: "border-t-amber-700/30",
+    cardClass: "bg-gradient-to-br from-amber-950/40 via-stone-900/35 to-stone-950/45",
   },
   {
     title: "SNS連携",
@@ -32,6 +34,7 @@ const services = [
       "Instagram、LINE、Xなどの運用導線をサイトに組み込み、継続的な接点づくりを進めます。",
     tag: "Connect",
     accentClass: "border-t-rose-500/25",
+    cardClass: "bg-gradient-to-br from-rose-950/35 via-stone-900/35 to-stone-950/45",
   },
   {
     title: "チャットボット構築",
@@ -39,6 +42,7 @@ const services = [
       "よくある質問や初回相談を自動化し、営業時間外の問い合わせ機会を逃さない仕組みを整えます。",
     tag: "Automate",
     accentClass: "border-t-stone-400/25",
+    cardClass: "bg-gradient-to-br from-stone-800/40 via-stone-900/35 to-stone-950/50",
   },
   {
     title: "ツール作成",
@@ -46,6 +50,7 @@ const services = [
       "業務効率化や運用に必要なWebアプリ・ダッシュボードを、目的に合わせて設計から開発します。",
     tag: "Tool",
     accentClass: "border-t-cyan-700/30",
+    cardClass: "bg-gradient-to-br from-cyan-950/35 via-stone-900/35 to-stone-950/45",
   },
 ];
 
@@ -143,22 +148,27 @@ const steps = [
   {
     title: "相談（ヒアリング）",
     description: "現状や目標、お困りごとを丁寧にお聞きします。",
+    cardClass: "bg-gradient-to-br from-teal-950/50 to-stone-900/40",
   },
   {
     title: "課題整理",
     description: "優先順位と進め方を一緒に整理します。",
+    cardClass: "bg-gradient-to-br from-stone-800/45 to-teal-950/35",
   },
   {
     title: "設計",
     description: "情報設計とUIを、目的に沿って設計します。",
+    cardClass: "bg-gradient-to-br from-teal-900/40 to-stone-950/45",
   },
   {
     title: "制作",
     description: "デザインと実装を進め、完成形を形にします。",
+    cardClass: "bg-gradient-to-br from-stone-800/40 to-stone-950/50",
   },
   {
     title: "公開",
     description: "公開と初期確認まで伴走します。",
+    cardClass: "bg-gradient-to-br from-teal-950/45 to-teal-900/30",
   },
 ];
 
@@ -372,7 +382,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-5">
           {steps.map((step, index) => (
             <Reveal key={step.title} delay={index * 80}>
-              <div className="relative h-full rounded-3xl border border-stone-500/15 bg-stone-900/30 p-5 text-center">
+              <div className={`relative h-full rounded-3xl border border-stone-500/15 p-5 text-center ${step.cardClass}`}>
                 <div className="mx-auto mb-4 grid size-12 place-items-center rounded-full border border-teal-600/25 bg-teal-900/40 text-lg font-black text-teal-100">
                   {index + 1}
                 </div>
@@ -397,7 +407,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 90}>
-              <article className={`h-full rounded-[2rem] border border-stone-500/15 border-t-2 bg-stone-900/30 p-6 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:border-teal-600/20 hover:bg-stone-900/40 ${service.accentClass}`}>
+              <article className={`h-full rounded-[2rem] border border-stone-500/15 border-t-2 p-6 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:border-teal-600/20 ${service.accentClass} ${service.cardClass}`}>
                 <span className="mb-8 inline-flex rounded-full border border-teal-700/20 bg-teal-950/25 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-teal-300/80">
                   {service.tag}
                 </span>
