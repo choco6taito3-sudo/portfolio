@@ -11,10 +11,23 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function getEnv(...keys: string[]) {
+  for (const key of keys) {
+    const value = process.env[key]?.trim();
+    if (value) return value;
+  }
+  return undefined;
+}
+
 export async function POST(request: Request) {
-  if (!process.env.RESEND_API_KEY) {
+  const resendApiKey = getEnv("RESEND_API_KEY", "resend_api_key");
+
+  if (!resendApiKey) {
     return NextResponse.json(
-      { error: "メール送信の設定が完了していません。" },
+      {
+        error:
+          "メール送信の設定が完了していません。Vercel に RESEND_API_KEY（re_ で始まる API キー）を設定してください。",
+      },
       { status: 503 },
     );
   }
@@ -57,12 +70,14 @@ export async function POST(request: Request) {
   }
 
   const toEmail =
-    process.env.CONTACT_TO_EMAIL ?? "choco6taito3@gmail.com";
+    getEnv("CONTACT_TO_EMAIL", "contact_to_email") ??
+    "choco6taito3@gmail.com";
   const fromEmail =
-    process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>";
+    getEnv("CONTACT_FROM_EMAIL", "contact_from_email") ??
+    "Portfolio <onboarding@resend.dev>";
 
   const { Resend } = await import("resend");
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(resendApiKey);
 
   const { error } = await resend.emails.send({
     from: fromEmail,
