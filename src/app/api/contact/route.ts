@@ -7,6 +7,11 @@ type ContactPayload = {
   message: string;
 };
 
+type ResendError = {
+  message?: string;
+  name?: string;
+};
+
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -17,6 +22,43 @@ function getEnv(...keys: string[]) {
     if (value) return value;
   }
   return undefined;
+}
+
+function normalizeFromEmail(value: string) {
+  const trimmed = value.trim().replace(/^["']|["']$/g, "");
+  if (trimmed.includes("<") && trimmed.includes(">")) return trimmed;
+  if (isValidEmail(trimmed)) return `Portfolio <${trimmed}>`;
+  return trimmed;
+}
+
+function formatResendError(error: ResendError) {
+  const message = error.message ?? "";
+
+  if (
+    message.includes("only send testing emails") ||
+    message.includes("verify a domain") ||
+    message.includes("resend.dev")
+  ) {
+    return "送信元ドメインが未認証です。Resend でドメインを認証するか、テスト用に CONTACT_FROM_EMAIL を「Portfolio <onboarding@resend.dev>」、CONTACT_TO_EMAIL を Resend 登録メールに設定してください。";
+  }
+
+  if (
+    message.includes("not verified") ||
+    message.includes("domain") ||
+    message.includes("Domain")
+  ) {
+    return "送信元メールのドメインが Resend で未認証です。Resend の Domains で DNS 認証を完了してください。";
+  }
+
+  if (message.includes("API key") || message.includes("api_key")) {
+    return "API キーが無効です。Vercel の RESEND_API_KEY（re_ で始まるキー）を確認してください。";
+  }
+
+  if (message) {
+    return `送信に失敗しました: ${message}`;
+  }
+
+  return "送信に失敗しました。時間をおいて再度お試しください。";
 }
 
 export async function POST(request: Request) {
@@ -72,9 +114,10 @@ export async function POST(request: Request) {
   const toEmail =
     getEnv("CONTACT_TO_EMAIL", "contact_to_email") ??
     "choco6taito3@gmail.com";
-  const fromEmail =
+  const fromEmail = normalizeFromEmail(
     getEnv("CONTACT_FROM_EMAIL", "contact_from_email") ??
-    "Portfolio <onboarding@resend.dev>";
+      "Portfolio <onboarding@resend.dev>",
+  );
 
   const { Resend } = await import("resend");
   const resend = new Resend(resendApiKey);
@@ -101,7 +144,7 @@ export async function POST(request: Request) {
   if (error) {
     console.error("Resend error:", error);
     return NextResponse.json(
-      { error: "送信に失敗しました。時間をおいて再度お試しください。" },
+      { error: formatResendError(error) },
       { status: 502 },
     );
   }
