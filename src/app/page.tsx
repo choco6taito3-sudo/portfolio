@@ -125,6 +125,15 @@ const snsWorks: Work[] = [
 
 const otherWorks: Work[] = [
   {
+    title: "タクシー管理ツール",
+    category: "タクシー売上管理Webアプリ",
+    description:
+      "札幌タクシー向けの売上アップ支援ツール。PIN認証、売上データの確認・管理をシンプルなUIで実装。",
+    href: "https://taxi-tours-production.up.railway.app/",
+    image: "/works/taxi-tours.png",
+    imageAlt: "タクシー管理ツールのログイン画面",
+  },
+  {
     title: "Omoide",
     category: "プライベート型思い出共有アプリ",
     description:
