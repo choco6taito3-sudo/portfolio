@@ -312,7 +312,7 @@ export default function Home() {
                 href="#works"
                 className="rounded-full border border-stone-500/25 px-8 py-4 text-sm font-bold text-stone-200 transition hover:border-stone-400/40 hover:bg-stone-800/40"
               >
-                制作実績を見る
+                参考例を見る
               </a>
             </div>
           </Reveal>
@@ -447,8 +447,8 @@ export default function Home() {
         <Reveal>
           <SectionHeading
             eyebrow="Chapter 05 — Works"
-            title="制作実績"
-            description="公開済みの制作事例を掲載しています。業種や目的に合わせて見せ方を調整します。"
+            title="参考例"
+            description="制作の参考として掲載している事例です。業種や目的に合わせた見せ方のイメージとしてご覧ください。"
           />
         </Reveal>
         <WorkGrid items={works} />
